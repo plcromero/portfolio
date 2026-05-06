@@ -8,7 +8,7 @@ const facts = [
   {
     title: "Backend en CakePHP",
     body:
-      "Modelado de dominio, validaciones, eventos del ciclo de vida y queries afinadas. Es lo que más toco a diario.",
+      "Es mi entorno de trabajo principal: dominio, validaciones, eventos del ciclo de vida y queries con cabeza.",
   },
   {
     title: "Diseño de APIs REST",
@@ -18,12 +18,12 @@ const facts = [
   {
     title: "SaaS multi-tenant",
     body:
-      "Aislamiento por tenant, permisos, cuotas y precios dinámicos. Lógica compleja sin perder claridad.",
+      "Trabajo con permisos, tenants, disponibilidad, precios y reglas de negocio que cambian según el contexto.",
   },
   {
     title: "Optimización",
     body:
-      "Profiling, índices, caché y rediseño de queries cuando hace falta. Bajar p95 sin reescribir el mundo.",
+      "Me fijo en endpoints lentos, datos sucios, índices, caché y queries que necesitan bajar tiempos de respuesta.",
   },
   {
     title: "Frontend moderno",
@@ -33,7 +33,7 @@ const facts = [
   {
     title: "Producción",
     body:
-      "+2 años manteniendo y evolucionando sistemas en uso, incluyendo entornos de eventos como FITUR.",
+      "+2 años manteniendo y evolucionando sistemas en uso, con experiencia en entornos de eventos como FITUR.",
   },
 ];
 
@@ -42,8 +42,8 @@ export default function About() {
     <Section
       id="sobre-mi"
       eyebrow="Sobre mí"
-      title="Fullstack con foco en producto"
-      description="Llevo +2 años desarrollando software que se usa todos los días en producción. Esto es lo que toco."
+      title="Desarrollo software que se mantiene"
+      description="Mi perfil mezcla backend, APIs, datos y frontend cuando el producto lo necesita."
       divider
     >
       <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-start">
@@ -57,22 +57,22 @@ export default function About() {
           <p className="text-fg-muted leading-relaxed">
             Soy{" "}
             <span className="font-medium text-fg">Manuel Jesús Romero García</span>{" "}
-            <span className="font-mono text-fg-subtle">(plcromero)</span>, fullstack
-            developer afincado en España. Mi día a día se reparte entre backend en
-            CakePHP, APIs REST y plataformas SaaS multi-tenant en las que la lógica
-            de negocio pesa tanto como el rendimiento.
+            <span className="font-mono text-fg-subtle">(plcromero)</span>, desarrollador
+            fullstack en España. En mi día a día trabajo sobre backend en CakePHP,
+            APIs REST, MySQL y plataformas SaaS multi-tenant donde la lógica de
+            negocio importa tanto como el rendimiento.
           </p>
           <p className="mt-4 text-fg-muted leading-relaxed">
-            He construido <span className="text-fg">Metalendario</span>: plataforma
-            de eventos API-first con backend, API y app móvil en React Native. He
-            metido mano en SaaS de ticketing con CakePHP, integraciones contra APIs
-            externas y webs a medida para clientes. Pongo foco en endpoints lentos,
-            datos sucios y queries que escalan mal.
+            He construido <span className="text-fg">Metalendario</span>, una plataforma
+            de eventos API-first con backend, API y app móvil en React Native. También
+            he trabajado en SaaS de ticketing, integraciones con APIs externas, webs
+            a medida para clientes y flujos relacionados con ventas, reservas y eventos.
           </p>
           <p className="mt-4 text-fg-muted leading-relaxed">
-            Me preocupo de que el código se entienda meses después y de que los
-            errores aparezcan pronto. Backend o frontend, según lo que necesite el
-            producto.
+            Me siento cómodo entrando en código existente, entendiendo reglas de
+            negocio y haciendo cambios sin convertirlo todo en una reescritura. Cuido
+            que el código se entienda meses después, que los errores aparezcan pronto
+            y que la solución encaje con lo que realmente necesita el producto.
           </p>
         </motion.div>
 

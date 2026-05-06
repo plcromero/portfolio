@@ -7,9 +7,9 @@ export const seo = {
   alias: "plcromero",
   jobTitle: "Fullstack Developer",
   description:
-    "Manuel Jesús Romero García (plcromero) — Fullstack Developer en España. Construyo APIs REST, plataformas SaaS multi-tenant y aplicaciones web modernas con Next.js, TypeScript, CakePHP y MySQL.",
+    "Manuel Jesús Romero García (plcromero) — Fullstack Developer en España. Trabajo con CakePHP, APIs REST, MySQL, SaaS multi-tenant, Next.js y React Native en productos reales.",
   shortDescription:
-    "Fullstack Developer · APIs REST, SaaS multi-tenant y aplicaciones web modernas.",
+    "Fullstack Developer · CakePHP, APIs REST, MySQL, SaaS multi-tenant y frontend moderno.",
   email: "plcromero@gmail.com",
   url: siteUrl,
   locale: "es_ES",
@@ -18,7 +18,7 @@ export const seo = {
   region: "Andalucía",
   twitter: "@plcromero",
   github: "https://github.com/plcromero",
-  linkedin: "https://www.linkedin.com/in/plcromero/",
+  linkedin: "https://www.linkedin.com/in/manuel-jesús-romero-garcía-86aa4b185/",
   keywords: [
     "Fullstack Developer España",
     "Desarrollador fullstack",

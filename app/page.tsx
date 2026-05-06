@@ -7,11 +7,13 @@ import Stack from "@/components/Stack";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function HomePage() {
   return (
     <>
       <JsonLd />
+      <ScrollProgress />
       <Navbar />
       <main className="relative">
         <Hero />

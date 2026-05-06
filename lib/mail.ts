@@ -7,6 +7,7 @@ const pass = process.env.SMTP_PASS;
 const from = process.env.MAIL_FROM ?? `plcromero <${user ?? "no-reply@plcromero.es"}>`;
 const ownerTo = process.env.OWNER_EMAIL ?? "plcromero@gmail.com";
 const replyTo = process.env.MAIL_REPLY_TO ?? user ?? ownerTo;
+const rejectUnauthorized = process.env.SMTP_TLS_REJECT_UNAUTHORIZED !== "false";
 
 let transporterCache: nodemailer.Transporter | null = null;
 
@@ -18,6 +19,7 @@ export function getTransporter() {
     port,
     secure: port === 465,
     auth: { user, pass },
+    tls: { rejectUnauthorized },
   });
   return transporterCache;
 }
@@ -105,7 +107,7 @@ export function autoreplyHtml({ name }: Payload) {
             <div style="margin-top:16px;display:block;">
               <a href="https://plcromero.es/#proyectos" style="display:inline-block;margin:4px 6px 4px 0;padding:9px 14px;background:#161b22;border:1px solid #30363d;border-radius:8px;color:#e6edf3;text-decoration:none;font-size:13px;">Proyectos</a>
               <a href="https://github.com/plcromero" style="display:inline-block;margin:4px 6px 4px 0;padding:9px 14px;background:#161b22;border:1px solid #30363d;border-radius:8px;color:#e6edf3;text-decoration:none;font-size:13px;">GitHub</a>
-              <a href="https://www.linkedin.com/in/plcromero/" style="display:inline-block;margin:4px 6px 4px 0;padding:9px 14px;background:#161b22;border:1px solid #30363d;border-radius:8px;color:#e6edf3;text-decoration:none;font-size:13px;">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/manuel-jesús-romero-garcía-86aa4b185/" style="display:inline-block;margin:4px 6px 4px 0;padding:9px 14px;background:#161b22;border:1px solid #30363d;border-radius:8px;color:#e6edf3;text-decoration:none;font-size:13px;">LinkedIn</a>
             </div>
           </div>
         </td></tr>

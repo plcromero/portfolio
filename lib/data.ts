@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: "Metalendario",
     tagline: "Plataforma de eventos · API-first",
     description:
-      "Plataforma de eventos con arquitectura API-first: backend, API REST y aplicación móvil en React Native. Del esquema de datos al pixel en pantalla.",
+      "Proyecto propio de eventos con arquitectura API-first: backend, API REST y aplicación móvil en React Native. Desde el modelo de datos hasta la experiencia final.",
     bullets: [
       "API REST con endpoints filtrables y paginación eficiente",
       "Sistema de agregación y normalización de datos heterogéneos",
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "Plataforma SaaS de ticketing",
     tagline: "Multi-tenant · Ventas y reservas",
     description:
-      "Sistema multi-tenant de gestión de ventas y reservas con lógica de negocio compleja, integraciones externas y optimización de rendimiento en hot-paths.",
+      "Trabajo backend sobre un SaaS multi-tenant de ventas y reservas, con reglas de negocio complejas, integraciones externas y optimización de endpoints críticos.",
     bullets: [
       "Gestión avanzada de precios, descuentos y disponibilidad",
       "Flujo de compras con estados y reintentos seguros",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     title: "Desarrollo web para clientes",
     tagline: "Frontend · Backend · Integraciones",
     description:
-      "Webs corporativas y herramientas a medida con foco en mantenibilidad, accesibilidad y rendimiento real en dispositivos finales.",
+      "Webs corporativas y herramientas a medida donde combino frontend, backend e integraciones, cuidando que el resultado sea mantenible y fácil de evolucionar.",
     bullets: [
       "Frontend responsive y accesible",
       "Backend a medida con APIs limpias",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     title: "Integraciones y APIs",
     tagline: "Sistemas en producción · Eventos",
     description:
-      "Consumo, integración y orquestación de APIs externas en sistemas reales, incluyendo entornos de eventos de gran volumen como FITUR.",
+      "Consumo, integración y orquestación de APIs externas en sistemas reales, incluyendo experiencia en entornos de eventos de gran volumen como FITUR.",
     bullets: [
       "Consumo de APIs externas con resiliencia (retries, backoff)",
       "Integración con proveedores y normalización de respuestas",
@@ -124,5 +124,5 @@ export const contact = {
   github: "https://github.com/plcromero",
   githubUser: "plcromero",
   web: "https://plcromero.es",
-  linkedin: "https://www.linkedin.com/in/plcromero/",
+  linkedin: "https://www.linkedin.com/in/manuel-jesús-romero-garcía-86aa4b185/",
 };

@@ -40,8 +40,8 @@ export default function FeaturedProject({ project, index }: Props) {
         }}
       />
 
-      <div className="grid gap-0 md:grid-cols-[1.2fr_1fr]">
-        <div className="p-6 md:p-10">
+      <div className="grid min-w-0 gap-0 md:grid-cols-[1.2fr_1fr]">
+        <div className="min-w-0 p-5 sm:p-6 md:p-10">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -54,7 +54,7 @@ export default function FeaturedProject({ project, index }: Props) {
             </span>
           </div>
 
-          <h3 className="mt-5 text-3xl md:text-5xl font-semibold tracking-tight">
+          <h3 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
             <span className="gradient-text">{project.title}</span>
           </h3>
 
@@ -92,24 +92,24 @@ export default function FeaturedProject({ project, index }: Props) {
           </div>
         </div>
 
-        <div className="relative border-t border-border-muted md:border-l md:border-t-0">
-          <div className="relative h-full p-6 md:p-8">
+        <div className="relative min-w-0 border-t border-border-muted md:border-l md:border-t-0">
+          <div className="relative h-full min-w-0 p-5 sm:p-6 md:p-8">
             <MockApiPanel
               endpoint="GET /api/v1/events?city=mad&type=concert&page=1"
               payload={samplePayload}
             />
 
             {project.meta && (
-              <dl className="mt-5 grid grid-cols-3 gap-3">
+              <dl className="mt-5 grid gap-3 sm:grid-cols-3">
                 {project.meta.map((m) => (
                   <div
                     key={m.label}
-                    className="rounded-lg border border-border-muted bg-bg-elevated/50 p-3"
+                    className="min-w-0 rounded-lg border border-border-muted bg-bg-elevated/50 p-3"
                   >
                     <dt className="text-[11px] uppercase tracking-wider text-fg-subtle">
                       {m.label}
                     </dt>
-                    <dd className="mt-0.5 text-sm font-medium text-fg">{m.value}</dd>
+                    <dd className="mt-0.5 break-words text-sm font-medium text-fg">{m.value}</dd>
                   </div>
                 ))}
               </dl>

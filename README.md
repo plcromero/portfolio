@@ -32,6 +32,7 @@ npm run start
 | `npm run dev` | Servidor de desarrollo en el puerto **4040** |
 | `npm run build` | Build de producción |
 | `npm run start` | Sirve el build en el puerto **4040** |
+| `npm run start:plesk` | Arranque para Plesk usando `$PORT` o **4040** |
 | `npm run lint` | Lint con ESLint |
 | `npm run typecheck` | TypeScript en modo `--noEmit` |
 

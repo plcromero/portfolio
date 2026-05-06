@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border-muted/60 py-10">
       <div className="container-page flex flex-col items-start justify-between gap-6 text-sm text-fg-subtle md:flex-row md:items-center">
-        <div>
+        <div className="min-w-0">
           <p>
             © {year} <span className="text-fg-muted">plcromero</span> · Manuel Jesús Romero García
           </p>

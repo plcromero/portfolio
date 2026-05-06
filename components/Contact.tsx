@@ -81,7 +81,7 @@ export default function Contact() {
           <ContactLink icon={<Mail />} label="Email" value={contact.email} href={`mailto:${contact.email}`} />
           <ContactLink icon={<Github />} label="GitHub" value={`@${contact.githubUser}`} href={contact.github} />
           <ContactLink icon={<Globe />} label="Web" value="plcromero.es" href={contact.web} />
-          <ContactLink icon={<Linkedin />} label="LinkedIn" value="linkedin.com/in/plcromero" href={contact.linkedin} />
+          <ContactLink icon={<Linkedin />} label="LinkedIn" value="linkedin.com/in/manuel-jesús-romero-garcía" href={contact.linkedin} />
         </motion.aside>
 
         <motion.form
@@ -115,7 +115,7 @@ export default function Contact() {
             className="mt-4"
           />
 
-          <div className="mt-6 flex items-center justify-between gap-4">
+          <div className="mt-6 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-between">
             <p
               role="status"
               aria-live="polite"
@@ -129,7 +129,7 @@ export default function Contact() {
               {status === "loading" && "Enviando…"}
             </p>
 
-            <button type="submit" disabled={status === "loading"} className="btn-primary group">
+            <button type="submit" disabled={status === "loading"} className="btn-primary group shrink-0">
               {status === "loading" ? "Enviando…" : "Enviar mensaje"}
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </button>
@@ -204,11 +204,11 @@ function ContactLink({
       <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border-muted bg-bg-subtle text-fg-muted transition-all group-hover:border-primary/40 group-hover:text-primary">
         {icon}
       </span>
-      <span className="flex flex-col">
+      <span className="flex min-w-0 flex-col">
         <span className="text-[11px] uppercase tracking-wider text-fg-subtle">{label}</span>
-        <span className="text-sm text-fg">{value}</span>
+        <span className="truncate text-sm text-fg">{value}</span>
       </span>
-      <span className="ml-auto text-fg-subtle transition-colors group-hover:text-primary">
+      <span className="ml-auto shrink-0 text-fg-subtle transition-colors group-hover:text-primary">
         <ArrowUpRight />
       </span>
     </motion.a>
