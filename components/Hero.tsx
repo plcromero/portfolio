@@ -22,7 +22,6 @@ export default function Hero() {
   });
 
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
     <section
@@ -53,7 +52,7 @@ export default function Hero() {
         className="pointer-events-none absolute left-[-100px] top-44 -z-10 h-64 w-64 rounded-full bg-accent/10 blur-3xl"
       />
 
-      <motion.div style={{ y: yContent }} className="container-page relative pb-14 md:pb-36">
+      <div className="container-page relative pb-14 md:pb-36">
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="min-w-0">
             <span className="section-eyebrow mb-6">
@@ -105,7 +104,7 @@ export default function Hero() {
             <HeroConsole />
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <ScrollHint />
     </section>
