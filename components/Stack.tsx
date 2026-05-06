@@ -27,12 +27,12 @@ export default function Stack() {
   ];
 
   return (
-    <section id="stack" className="relative py-24 md:py-32">
+    <section id="stack" className="relative py-16 md:py-20">
       <div className="container-page">
         <SectionHeader
           eyebrow="Stack"
-          title="Tecnologías que uso a diario"
-          description="Herramientas que conozco a fondo y que he llevado a producción. Sin lista de buzzwords."
+          title="Herramientas con las que trabajo"
+          description="Lo que ya he llevado a producción. Si pongo algo aquí es porque lo conozco a fondo."
         />
 
         <motion.div

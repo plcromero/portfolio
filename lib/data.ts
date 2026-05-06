@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: "Metalendario",
     tagline: "Plataforma de eventos · API-first",
     description:
-      "Plataforma de eventos con arquitectura API-first que incluye backend, API REST y aplicación móvil en React Native. Desde el endpoint hasta la pantalla.",
+      "Plataforma de eventos con arquitectura API-first: backend, API REST y aplicación móvil en React Native. Del esquema de datos al pixel en pantalla.",
     bullets: [
       "API REST con endpoints filtrables y paginación eficiente",
       "Sistema de agregación y normalización de datos heterogéneos",

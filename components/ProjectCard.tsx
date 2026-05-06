@@ -7,9 +7,16 @@ import { fadeUp } from "@/lib/motion";
 type Props = { project: Project };
 
 export default function ProjectCard({ project }: Props) {
+  function onMouseMove(e: React.MouseEvent<HTMLElement>) {
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+  }
+
   return (
     <motion.article
       variants={fadeUp}
+      onMouseMove={onMouseMove}
       className="glass-card glass-card-hover group relative overflow-hidden p-6 md:p-7"
     >
       <div
@@ -17,7 +24,7 @@ export default function ProjectCard({ project }: Props) {
         className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(600px 240px at var(--mx, 50%) 0%, rgba(88,166,255,0.08), transparent 70%)",
+            "radial-gradient(380px 260px at var(--mx, 50%) var(--my, 50%), rgba(88,166,255,0.10), transparent 70%)",
         }}
       />
       <div className="flex items-start justify-between gap-4">

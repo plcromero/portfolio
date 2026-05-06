@@ -6,24 +6,24 @@ import SectionHeader from "./SectionHeader";
 
 const facts = [
   {
-    title: "Backend con CakePHP",
+    title: "Backend en CakePHP",
     body:
-      "Trabajo a diario con CakePHP en SaaS multi-tenant: modelado de dominio, validaciones, eventos, hooks de ciclo de vida y queries optimizadas.",
+      "Modelado de dominio, validaciones, eventos del ciclo de vida y queries afinadas. Es lo que más toco a diario.",
   },
   {
-    title: "APIs REST de verdad",
+    title: "Diseño de APIs REST",
     body:
-      "Diseño endpoints con paginación, filtros, versionado y contratos estables. La API se documenta y se respeta como producto.",
+      "Paginación, filtros, versionado y contratos estables. La API se documenta y se mantiene como un producto más.",
   },
   {
     title: "SaaS multi-tenant",
     body:
-      "Aislamiento por tenant, permisos, cuotas y precios dinámicos. Lógica compleja sin perder claridad en el código.",
+      "Aislamiento por tenant, permisos, cuotas y precios dinámicos. Lógica compleja sin perder claridad.",
   },
   {
-    title: "Optimización de rendimiento",
+    title: "Optimización",
     body:
-      "Profiling, índices, caché y rediseño de queries en hot-paths. Mejorar p95 sin reescribirlo todo.",
+      "Profiling, índices, caché y rediseño de queries cuando hace falta. Bajar p95 sin reescribir el mundo.",
   },
   {
     title: "Frontend moderno",
@@ -31,21 +31,21 @@ const facts = [
       "Next.js, TypeScript y React Native cuando toca. UI consistente, accesible y rápida en dispositivos reales.",
   },
   {
-    title: "Producción real",
+    title: "Producción",
     body:
-      "+2 años manteniendo y evolucionando sistemas en uso, incluyendo entornos de eventos de gran volumen tipo FITUR.",
+      "+2 años manteniendo y evolucionando sistemas en uso, incluyendo entornos de eventos como FITUR.",
   },
 ];
 
 export default function About() {
   return (
-    <section id="sobre-mi" className="relative py-24 md:py-32">
+    <section id="sobre-mi" className="relative py-16 md:py-20">
       <div aria-hidden className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="container-page">
         <SectionHeader
           eyebrow="Sobre mí"
           title="Fullstack con foco en producto"
-          description="Lo que sé hacer está construido sobre proyectos reales que pisan tráfico todos los días. Esta es la versión sin frases vacías."
+          description="Llevo +2 años desarrollando software que se usa todos los días en producción. Esto es lo que toco."
         />
 
         <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-start">
@@ -58,23 +58,22 @@ export default function About() {
           >
             <p className="text-fg-muted leading-relaxed">
               Soy <span className="text-fg font-medium">Manuel Jesús Romero García</span>{" "}
-              <span className="font-mono text-fg-subtle">(plcromero)</span>, fullstack developer con más de
-              dos años trabajando en producción. Mi día a día está repartido entre
-              backend en CakePHP, APIs REST y plataformas SaaS multi-tenant donde la
-              lógica de negocio importa tanto como la performance.
+              <span className="font-mono text-fg-subtle">(plcromero)</span>, fullstack developer
+              afincado en España. Mi día a día se reparte entre backend en CakePHP,
+              APIs REST y plataformas SaaS multi-tenant en las que la lógica de
+              negocio pesa tanto como el rendimiento.
             </p>
             <p className="mt-4 text-fg-muted leading-relaxed">
-              He construido <span className="text-fg">Metalendario</span>, una
-              plataforma de eventos API-first con backend, API REST y app móvil en
-              React Native. He desarrollado funcionalidades críticas en SaaS de
-              ticketing, integraciones contra APIs externas y webs a medida para
-              clientes. Cuando un endpoint va lento, lo perfilo. Cuando un dato no
-              cuadra, lo normalizo.
+              He construido <span className="text-fg">Metalendario</span>: plataforma
+              de eventos API-first con backend, API y app móvil en React Native. He
+              metido mano en SaaS de ticketing con CakePHP, integraciones contra APIs
+              externas y webs a medida para clientes. Pongo foco en endpoints lentos,
+              datos sucios y queries que escalan mal.
             </p>
             <p className="mt-4 text-fg-muted leading-relaxed">
-              Me importa que el código sea legible meses después, que los errores
-              salgan pronto y que el producto se pueda iterar sin miedo. Frontend
-              y backend, sin elegir bando.
+              Me preocupo de que el código se entienda meses después y de que los
+              errores aparezcan pronto. Backend o frontend, según lo que necesite el
+              producto.
             </p>
           </motion.div>
 

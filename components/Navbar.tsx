@@ -46,9 +46,9 @@ export default function Navbar() {
               <path d="M4 17l5-10 3 6 3-4 5 8" />
             </svg>
           </span>
-          <span className="text-fg">Romero</span>
-          <span className="hidden text-fg-subtle sm:inline">/</span>
-          <span className="hidden font-mono text-xs text-fg-muted sm:inline">plcromero</span>
+          <span className="text-fg">plcromero</span>
+          <span className="hidden text-fg-subtle sm:inline">·</span>
+          <span className="hidden font-mono text-xs text-fg-muted sm:inline">fullstack</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

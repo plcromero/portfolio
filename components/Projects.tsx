@@ -12,12 +12,12 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="proyectos" className="relative py-24 md:py-32">
+    <section id="proyectos" className="relative py-16 md:py-20">
       <div className="container-page">
         <SectionHeader
           eyebrow="Proyectos"
           title="Trabajo seleccionado"
-          description="Plataformas, APIs e integraciones reales construidas en producción. Cada proyecto resuelve un problema concreto a escala."
+          description="Plataformas, APIs e integraciones que están en producción y resuelven problemas concretos."
         />
 
         <motion.div

@@ -23,6 +23,7 @@ export default function Contact() {
     const name = String(fd.get("name") ?? "").trim();
     const email = String(fd.get("email") ?? "").trim();
     const message = String(fd.get("message") ?? "").trim();
+    const website = String(fd.get("website") ?? "");
 
     const localErrors: Record<string, string> = {};
     if (name.length < 2) localErrors.name = "El nombre es demasiado corto.";
@@ -41,7 +42,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -56,13 +57,13 @@ export default function Contact() {
   }
 
   return (
-    <section id="contacto" className="relative py-24 md:py-32">
+    <section id="contacto" className="relative py-16 md:py-20">
       <div aria-hidden className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="container-page">
         <SectionHeader
           eyebrow="Contacto"
-          title="Hablemos"
-          description="¿Tienes una idea, un proyecto o necesitas un fullstack para una integración seria? Escríbeme."
+          title="Cuéntame el proyecto"
+          description="Plataforma a medida, API, integración o un SaaS que necesita manos. Escríbeme y te respondo cuanto antes."
         />
 
         <div className="grid gap-6 md:grid-cols-[1fr_1.2fr]">
@@ -108,11 +109,18 @@ export default function Contact() {
             noValidate
             className="glass-card p-6 md:p-7"
           >
+            {/* honeypot anti-bots */}
+            <div aria-hidden className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden">
+              <label>
+                Website
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              </label>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <Field
                 label="Nombre"
                 name="name"
-                placeholder="Tu nombre"
+                placeholder="Cómo te llamas"
                 error={errors.name}
               />
               <Field
@@ -128,7 +136,7 @@ export default function Contact() {
               label="Mensaje"
               name="message"
               as="textarea"
-              placeholder="Cuéntame en qué andas trabajando…"
+              placeholder="Cuéntame en qué andas y qué necesitas…"
               error={errors.message}
               className="mt-4"
             />
@@ -145,9 +153,9 @@ export default function Contact() {
                     : "text-fg-subtle"
                 }`}
               >
-                {status === "ok" && "Mensaje enviado. Te responderé pronto."}
-                {status === "error" && (errorMsg ?? "Algo falló. Inténtalo de nuevo.")}
-                {status === "idle" && "Respondo en 24-48h."}
+                {status === "ok" && "Mensaje enviado. Recibirás copia en tu correo."}
+                {status === "error" && (errorMsg ?? "Algo falló. Prueba otra vez.")}
+                {status === "idle" && "Tu email no se comparte con nadie."}
                 {status === "loading" && "Enviando…"}
               </p>
 
