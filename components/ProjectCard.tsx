@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 import type { Project } from "@/lib/data";
 import { fadeUp } from "@/lib/motion";
+import { ArrowUpRight } from "./icons";
 
-type Props = { project: Project };
+type Props = { project: Project; index: number };
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, index }: Props) {
   function onMouseMove(e: React.MouseEvent<HTMLElement>) {
     const r = e.currentTarget.getBoundingClientRect();
     e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
@@ -17,7 +18,7 @@ export default function ProjectCard({ project }: Props) {
     <motion.article
       variants={fadeUp}
       onMouseMove={onMouseMove}
-      className="glass-card glass-card-hover group relative overflow-hidden p-6 md:p-7"
+      className="glass-card glass-card-hover group relative flex flex-col overflow-hidden p-6 md:p-7"
     >
       <div
         aria-hidden
@@ -27,20 +28,20 @@ export default function ProjectCard({ project }: Props) {
             "radial-gradient(380px 260px at var(--mx, 50%) var(--my, 50%), rgba(88,166,255,0.10), transparent 70%)",
         }}
       />
+
       <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-mono uppercase tracking-wider text-fg-subtle">
-            {project.tagline}
-          </p>
-          <h3 className="mt-1 text-xl md:text-2xl font-semibold tracking-tight text-fg">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-fg-subtle">
+            <span className="text-primary/70">{String(index).padStart(2, "0")}</span>
+            <span className="h-px w-6 bg-border-muted" />
+            <span className="truncate">{project.tagline}</span>
+          </div>
+          <h3 className="mt-2 text-xl md:text-2xl font-semibold tracking-tight text-fg">
             {project.title}
           </h3>
         </div>
         <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border-muted bg-bg-subtle/60 text-fg-muted transition-all group-hover:border-primary/40 group-hover:text-primary">
-          <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17 17 7" />
-            <path d="M7 7h10v10" />
-          </svg>
+          <ArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
       </div>
 
@@ -48,10 +49,10 @@ export default function ProjectCard({ project }: Props) {
         {project.description}
       </p>
 
-      {project.bullets?.length > 0 && (
+      {project.bullets.length > 0 && (
         <ul className="mt-5 space-y-2">
           {project.bullets.map((b) => (
-            <li key={b} className="flex gap-2 text-sm text-fg">
+            <li key={b} className="flex gap-2 text-sm">
               <span aria-hidden className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-primary" />
               <span className="text-fg-muted">{b}</span>
             </li>
@@ -59,8 +60,8 @@ export default function ProjectCard({ project }: Props) {
         </ul>
       )}
 
-      {project.stack?.length > 0 && (
-        <div className="mt-6 flex flex-wrap gap-1.5">
+      {project.stack.length > 0 && (
+        <div className="mt-6 flex flex-wrap gap-1.5 pt-2">
           {project.stack.map((s) => (
             <span key={s} className="badge">
               {s}

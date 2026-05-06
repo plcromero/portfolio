@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { Close, Logo, Menu } from "./icons";
 
 const links = [
   { href: "#proyectos", label: "Proyectos" },
@@ -37,14 +38,9 @@ export default function Navbar() {
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between">
-        <Link
-          href="#top"
-          className="group flex items-center gap-2.5 font-medium tracking-tight"
-        >
+        <Link href="#top" className="group flex items-center gap-2.5 font-medium tracking-tight">
           <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-md border border-border-muted bg-bg-elevated text-primary shadow-card transition-all group-hover:border-primary/50 group-hover:shadow-glow">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 17l5-10 3 6 3-4 5 8" />
-            </svg>
+            <Logo />
           </span>
           <span className="text-fg">plcromero</span>
           <span className="hidden text-fg-subtle sm:inline">·</span>
@@ -70,46 +66,38 @@ export default function Navbar() {
         </nav>
 
         <button
-          aria-label="Abrir menú"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border-muted bg-bg-elevated text-fg-muted md:hidden"
         >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <>
-                <path d="M3 6h18" />
-                <path d="M3 12h18" />
-                <path d="M3 18h18" />
-              </>
-            )}
-          </svg>
+          {open ? <Close /> : <Menu />}
         </button>
       </div>
 
-      {open && (
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          className="border-t border-border-muted bg-bg/95 backdrop-blur-xl md:hidden"
-        >
-          <div className="container-page flex flex-col gap-1 py-4">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base text-fg-muted hover:bg-bg-elevated hover:text-fg"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="border-t border-border-muted bg-bg/95 backdrop-blur-xl md:hidden"
+          >
+            <div className="container-page flex flex-col gap-1 py-4">
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md px-3 py-3 text-base text-fg-muted hover:bg-bg-elevated hover:text-fg"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
